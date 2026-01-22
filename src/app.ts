@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express"
 // import { postRouter } from "./modules/posts/posts.router";
-// import { toNodeHandler } from "better-auth/node";
-// import { auth } from "./lib/auth";
+import { toNodeHandler } from "better-auth/node";
 import cors from "cors"
+import { auth } from "./lib/auth";
 // import { commentRouter } from "./modules/comments/commets.router";
 // import errorHandler from "./middleware/globalErrorHandler";
 // import { notFound } from "./middleware/notFound";
@@ -15,7 +15,7 @@ app.use(cors({
 }))
 
 // better auth 
-// app.all("/api/auth/*splat", toNodeHandler(auth));
+app.all("/api/auth/*splat", toNodeHandler(auth));
 // // post router
 // app.use("/posts", postRouter);
 // // comment router
